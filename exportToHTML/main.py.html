@@ -1,0 +1,280 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Main Script for &quot;DNDAdv&quot; by DW</span>
+
+<span class="s2">import </span><span class="s1">random</span>
+<span class="s2">import </span><span class="s1">tkinter</span>
+<span class="s2">from </span><span class="s1">tkinter </span><span class="s2">import </span><span class="s1">*</span>
+
+
+<span class="s1">m = tkinter.Tk()</span>
+
+<span class="s0"># Picking randomly from predetermined list.</span>
+<span class="s1">fname = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/fname.txt'</span><span class="s1">)]</span>
+<span class="s1">lname = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/lname.txt'</span><span class="s1">)]</span>
+<span class="s1">cl = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/Classes.txt'</span><span class="s1">)]</span>
+<span class="s1">races = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/races.txt'</span><span class="s1">)]</span>
+<span class="s1">rancl = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/num.txt'</span><span class="s1">)]</span>
+<span class="s1">rancl2 = [line.strip() </span><span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">open(</span><span class="s3">'lists/num.txt'</span><span class="s1">)]</span>
+
+<span class="s1">m.title(</span><span class="s3">'Test Two'</span><span class="s1">)</span>
+
+<span class="s0"># Defining class and race for bonus generation</span>
+<span class="s1">Clss = random.choice(cl)</span>
+<span class="s1">Race = random.choice(races)</span>
+<span class="s1">rnum1 = random.choice(rancl)</span>
+<span class="s1">rnum2 = random.choice(rancl2)</span>
+
+
+<span class="s0"># Generating stats</span>
+<span class="s1">num1 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+<span class="s1">num2 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+<span class="s1">num3 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+<span class="s1">num4 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+<span class="s1">num5 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+<span class="s1">num6 = random.randint(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+
+<span class="s0"># Sanity Check</span>
+<span class="s1">print(Race)</span>
+<span class="s1">print(Clss)</span>
+<span class="s1">print(num1)</span>
+<span class="s1">print(num2)</span>
+<span class="s1">print(num3)</span>
+<span class="s1">print(num4)</span>
+<span class="s1">print(num5)</span>
+<span class="s1">print(num6)</span>
+<span class="s1">print(rnum1)</span>
+<span class="s1">print(rnum2)</span>
+
+
+<span class="s0"># Adding Race Bonuses</span>
+<span class="s0"># num1 = Strength</span>
+<span class="s0"># num2 = Dexterity</span>
+<span class="s0"># num3 = Constitution</span>
+<span class="s0"># num4 = Intelligence</span>
+<span class="s0"># num5 = Wisdom</span>
+<span class="s0"># num6 = Charisma</span>
+
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Dragonborn'</span><span class="s1">:</span>
+    <span class="s1">num1 = num1 + </span><span class="s4">2</span>
+    <span class="s1">num6 = num6 + </span><span class="s4">1</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Dwarf'</span><span class="s1">:</span>
+    <span class="s1">num3 = num3 + </span><span class="s4">2</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Elf'</span><span class="s1">:</span>
+    <span class="s1">num2 = num2 + </span><span class="s4">2</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Gnome'</span><span class="s1">:</span>
+    <span class="s1">num4 = num4 + </span><span class="s4">2</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Half-Elf'</span><span class="s1">:</span>
+    <span class="s1">num6 = num6 + </span><span class="s4">2</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Halfling'</span><span class="s1">:</span>
+    <span class="s1">num2 = num2 + </span><span class="s4">2</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Half-Orc'</span><span class="s1">:</span>
+    <span class="s1">num1 = num1 + </span><span class="s4">2</span>
+    <span class="s1">num3 = num3 + </span><span class="s4">1</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Human'</span><span class="s1">:</span>
+    <span class="s1">num1 = num1 + </span><span class="s4">1</span>
+    <span class="s1">num2 = num2 + </span><span class="s4">1</span>
+    <span class="s1">num3 = num3 + </span><span class="s4">1</span>
+    <span class="s1">num4 = num4 + </span><span class="s4">1</span>
+    <span class="s1">num5 = num5 + </span><span class="s4">1</span>
+    <span class="s1">num6 = num6 + </span><span class="s4">1</span>
+<span class="s2">if </span><span class="s1">Race == </span><span class="s3">'Tiefling'</span><span class="s1">:</span>
+    <span class="s1">num6 = num6 + </span><span class="s4">2</span>
+    <span class="s1">num4 = num4 + </span><span class="s4">1</span>
+
+<span class="s0"># Generating bonuses</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num1 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num1 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bnum1 = </span><span class="s3">'+5'</span>
+
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num2 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num2 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bnum2 = </span><span class="s3">'+5'</span>
+
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num3 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num3 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bonus3 = </span><span class="s3">'+5'</span>
+
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num4 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num4 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bonus4 = </span><span class="s3">'+5'</span>
+
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num5 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num5 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bonus5 = </span><span class="s3">'+5'</span>
+
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">1</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'-5'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">2 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">3</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'-4'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">4 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">5</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'-3'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">6 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">7</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'-2'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">8 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">9</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'-1'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">10 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">11</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+0'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">12 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">13</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+1'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">14 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">15</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+2'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">16 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">17</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+3'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">18 </span><span class="s2">or </span><span class="s1">num6 == </span><span class="s4">19</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+4'</span>
+<span class="s2">if </span><span class="s1">num6 == </span><span class="s4">20</span><span class="s1">:</span>
+    <span class="s1">bonus6 = </span><span class="s3">'+5'</span>
+
+<span class="s0"># Gui elements</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Now Showing Random DND Stats!'</span><span class="s1">).grid(row=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=random.choice(fname)).grid(row=</span><span class="s4">1</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=random.choice(lname)).grid(row=</span><span class="s4">1</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Strength'</span><span class="s1">).grid(row=</span><span class="s4">2</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num1).grid(row=</span><span class="s4">2</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bnum1).grid(row=</span><span class="s4">2</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Dexterity'</span><span class="s1">).grid(row=</span><span class="s4">3</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num2).grid(row=</span><span class="s4">3</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bnum2).grid(row=</span><span class="s4">3</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Constitution'</span><span class="s1">).grid(row=</span><span class="s4">4</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num3).grid(row=</span><span class="s4">4</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bonus3).grid(row=</span><span class="s4">4</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Intelligence'</span><span class="s1">).grid(row=</span><span class="s4">5</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num4).grid(row=</span><span class="s4">5</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bonus4).grid(row=</span><span class="s4">5</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Wisdom'</span><span class="s1">).grid(row=</span><span class="s4">6</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num5).grid(row=</span><span class="s4">6</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bonus5).grid(row=</span><span class="s4">6</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Charisma'</span><span class="s1">).grid(row=</span><span class="s4">7</span><span class="s2">,</span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=num6).grid(row=</span><span class="s4">7</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=bonus6).grid(row=</span><span class="s4">7</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">2</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Race'</span><span class="s1">).grid(row=</span><span class="s4">8</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=Race).grid(row=</span><span class="s4">8</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=</span><span class="s3">'Class'</span><span class="s1">).grid(row=</span><span class="s4">9</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">Label(m</span><span class="s2">, </span><span class="s1">text=Clss).grid(row=</span><span class="s4">9</span><span class="s2">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s1">mainloop()</span></pre>
+</body>
+</html>
